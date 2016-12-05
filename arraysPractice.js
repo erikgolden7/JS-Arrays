@@ -45,7 +45,7 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   function reversedLooper(letters) {
-    for (var i = 0; i <= letters.length -1; i--) {
+    for (var i = letters.length - 1; i >= 0; i--) {
       alert(letters[i]);
     }
     return letters;
@@ -58,7 +58,14 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
-  //Code Here
+  function evenFinder(nums) {
+    for (var i = 0; i <= nums.length; i++) {
+      if(nums[i] % 2 === 1) {
+        nums.splice(i, 1);
+      }
+    }
+    return nums;
+  }
 
 
 //Next problem
@@ -69,8 +76,20 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
 
 
-
-  //Code Here
+function divider(numbersArray) {
+  var odds = [];
+  var evens = [];
+  for (var i = 0; i <= numbersArray.length -1; i++) {
+    if(numbersArray[i] % 2 === 0){
+      evens.push(numbersArray[i]);
+    }
+    else {
+      odds.push(numbersArray[i]);
+    }
+    }
+    var answer = [evens, odds];
+    return answer;
+}
 
 
 //Next Problem
@@ -84,13 +103,19 @@ var getRandomArbitrary = function() {
 
 // Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary), then loop through the array (that will be passed in as a parameter) to see if that random number is in the array. If it is, return true, if it's not, return false
 
-  //Code Here
 
-  //Code Here
+function finder(arr) {
+  var random = getRandomArbitrary();
 
+  for (var i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] === random) {
+      return true;
+    }
+  }
+  return false;
+}
 
 //Next problem
-
 
 
 var str = 'this is my sentence';
@@ -118,7 +143,9 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
 
-  //Code Here
+  if(!myGroceryList) {
+    return [];
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
