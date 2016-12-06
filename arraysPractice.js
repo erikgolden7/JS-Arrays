@@ -150,22 +150,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 function removeItem(myGroceryList, item) {
-  for (var i = 0; i <= myGroceryList.length; i++) {
-    if (myGroceryList[i] === item) {
-      myGroceryList.splice(i, 1);
-    }
-    else if(!myGroceryList) {
-      return [];
-    }
-  }
-  return myGroceryList;
-}
-
-function addItem(myGroceryList, item) {
-  myGroceryList.push(item);
-  if(!myGroceryList) {
+  if(!item){
     return [];
   }
+    for (var i = 0; i < myGroceryList.length; i++) {
+      if (myGroceryList[i] === item) {
+        myGroceryList.splice(i, 1);
+        i--;
+      }
+    }
+    return myGroceryList;
+  }
+
+
+function addItem(myGroceryList, item) {
+  if(!item){
+    return [];
+  }
+  myGroceryList.push(item);
   return myGroceryList;
 }
 
@@ -200,8 +202,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+function addTen(numbers) {
+  for (var i = 0; i < numbers.length; i++) {
 
+    numbers[i] = numbers[i] + 10;
+
+  }
+  return numbers;
+}
 
 
 //Next Problem
@@ -221,7 +229,22 @@ for(var i = 0; i < num2; i++){
 //Above is some code that adds a random number of values to both arr1 and arr2.
 //Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
 
-  //Code Here
+function longer (arr1, arr2) {
+  var count1 = 0;
+  var count2 = 0;
+  for (var i = 0; i <= arr1.length; i++) {
+    count1++;
+  }
+  for (var i = 0; i <= arr2.length; i++) {
+    count1++;
+  }
+  if(arr1 > arr2) {
+    return arr1;
+  }
+  else if (arr2 > arr1) {
+    return arr2;
+  }
+}
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -230,7 +253,9 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-  //Code Here
+  function both(arr1, arr2) {
+    for (var i = 0; )
+  }
 
 
 
