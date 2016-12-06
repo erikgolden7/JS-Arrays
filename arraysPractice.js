@@ -121,7 +121,13 @@ function finder(arr) {
 var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
-  //Code Here
+function reverse(str) {
+  var reversed = "";
+  for (var i = str.length -1; i >=0; i--) {
+    reversed += (str[i])
+  }
+  return reversed;
+}
 
 
 //Next Problem
@@ -143,9 +149,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   In both the removeItem function and the addItem function, you will also need to check for valid aurguments. Specrunner will try to call your functions without passing in valid aurguments. When this happens, you will need to respond by returning an empty array.
 */
 
+function removeItem(myGroceryList, item) {
+  for (var i = 0; i <= myGroceryList.length; i++) {
+    if (myGroceryList[i] === item) {
+      myGroceryList.splice(i, 1);
+    }
+    else if(!myGroceryList) {
+      return [];
+    }
+  }
+  return myGroceryList;
+}
+
+function addItem(myGroceryList, item) {
+  myGroceryList.push(item);
   if(!myGroceryList) {
     return [];
   }
+  return myGroceryList;
+}
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -158,7 +180,16 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+function maker() {
+var num = 1;
+arr = [];
+var total = [];
+for (var i = 0; i < 215; i++) {
+  arr = total.push(num);
+  num++;
+}
+return total;
+}
 
 
 
